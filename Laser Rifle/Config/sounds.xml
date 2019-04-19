@@ -1,0 +1,15 @@
+<configs>
+<append xpath="/Sounds">
+<SoundDataNode name="laserfire1"> 
+		 <AudioSource name="Sounds/AudioSource_WeaponFire"/> 
+		 <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+			<Noise ID="5" range="80" volume="80" time="3" heat_map_strength="0.1" heat_map_time="120"/>
+			<AudioClip ClipName="#@modfolder:Resources/LaserRifle.unity3d?lasershot1"/>
+			<LocalCrouchVolumeScale value="0.5"/> 
+			<CrouchNoiseScale value="0.5"/>
+			<NoiseScale value="1"/> 
+			<MaxVoices value="10"/> 
+			<MaxRepeatRate value="0.001"/>
+	</SoundDataNode>
+	</append>
+</configs>

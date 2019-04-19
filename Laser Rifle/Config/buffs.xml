@@ -1,0 +1,32 @@
+<configs>
+<append xpath="/buffs">
+	<buff name="buffLaser">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<update_rate value=".5"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration=".2,2" value="0,5000" />
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/LaserRifle.unity3d?LaserImpact" local_offset="0,0.4,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" target="self" parent_transform="Hips" prefab="#@modfolder:Resources/LaserRifle.unity3d?LaserImpact"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" parent_transform="Hips" prefab="#@modfolder:Resources/LaserRifle.unity3d?LaserImpact"/>
+			</effect_group>
+		</buff>
+		<buff name="buffOrb">
+			<damage_type value="disease"/>
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<update_rate value="1"/>
+			<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_set" value="0,.01,.1" duration="0,8,10"/>
+				<passive_effect name="WalkSpeed" operation="perc_set" value="0,.01,.1" duration="0,8,10"/>
+				<passive_effect name="CrouchSpeed" operation="perc_set" value="0" />
+				<passive_effect name="JumpStrength" operation="perc_set" value="0" />
+				<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/Test2.unity3d?OrbPrefab" local_offset="0,0.2,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" target="self" parent_transform="Hips" prefab="#@modfolder:Resources/Test2.unity3d?OrbPrefab"/>
+				<triggered_effect trigger="onSelfDied" action="RemovePrefabFromEntity" target="self" parent_transform="Hips" prefab="#@modfolder:Resources/Test2.unity3d?OrbPrefab"/>
+			</effect_group>
+		</buff>
+	</append>
+</configs>
+		
